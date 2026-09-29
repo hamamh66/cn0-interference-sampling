@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below and cite the companion article once published."
+message: "If you use this software, please cite it as below."
 type: software
 title: "cn0sampling: GNSS multipath-class detectability from spatial and inter-frequency C/N0 differences under receiver quantization and noise"
 version: 1.0.0
@@ -18,11 +18,3 @@ keywords:
   - dual-antenna
   - receiver quantization
   - reproducible simulation
-preferred-citation:
-  type: article
-  title: "Sampling One Interference Pattern Twice: Detectability of GNSS Multipath Classes from Spatial and Inter-Frequency C/N0 Differences under Receiver Quantization and Noise"
-  authors:
-    - family-names: Hamam
-      given-names: Habib
-  journal: "Under review"
-  year: 2026

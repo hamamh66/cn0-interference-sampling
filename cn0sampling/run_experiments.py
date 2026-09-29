@@ -1,4 +1,4 @@
-"""Reproduce all manuscript results (E1-E5). Outputs go to an explicit directory (default: results/)."""
+"""Run experiments E1-E5. Outputs go to an explicit directory (default: results/)."""
 from pathlib import Path
 import json,time,platform,hashlib,sys
 import numpy as np
