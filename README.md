@@ -1,6 +1,5 @@
 # cn0-interference-sampling
 
-[![tests](https://github.com/hamamh66/cn0-interference-sampling/actions/workflows/test.yml/badge.svg)](https://github.com/hamamh66/cn0-interference-sampling/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Python](https://img.shields.io/badge/python-3.10%20%7C%203.12-blue)
 
@@ -63,7 +62,7 @@ pe = sim.bayes_error(alpha=0.05, dphi=3.14159, sigma=0.5, q=0.25)      # quantiz
 | `notebooks/cn0_difference_detectability.ipynb` | Executed notebook: self-checks, full run, figures, tables and interpretation |
 | `results/results.json` | Archived results with per-seed metrics, validation checks, software versions and source hashes |
 | `results/figures/`, `results/tables/` | Archived figures (PDF/PNG/SVG) and LaTeX tables |
-| `tests/` | Physical self-checks and a reproduction test against the archived results (run in CI) |
+| `tests/` | Physical self-checks and a reproduction test against the archived results |
 
 ## Model
 
