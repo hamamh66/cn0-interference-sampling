@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="572.4pt" height="324.864pt" viewBox="0 0 572.4 324.864" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-29T12:28:40.135075</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.9, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 324.864 
+L 572.4 324.864 
+L 572.4 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 18.36 134.49024 
+L 174.6 134.49024 
+Q 180.18 134.49024 180.18 131.3856 
+L 180.18 32.03712 
+Q 180.18 28.93248 174.6 28.93248 
+L 18.36 28.93248 
+Q 12.78 28.93248 12.78 32.03712 
+L 12.78 131.3856 
+Q 12.78 134.49024 18.36 134.49024 
+z
+" clip-path="url(#peaaabc8dbe)" style="fill: #eaf2f8; stroke: #27465b; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 208.08 134.49024 
+L 364.32 134.49024 
+Q 369.9 134.49024 369.9 131.3856 
+L 369.9 32.03712 
+Q 369.9 28.93248 364.32 28.93248 
+L 208.08 28.93248 
+Q 202.5 28.93248 202.5 32.03712 
+L 202.5 131.3856 
+Q 202.5 134.49024 208.08 134.49024 
+z
+" clip-path="url(#peaaabc8dbe)" style="fill: #eaf2f8; stroke: #27465b; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 397.8 134.49024 
+L 554.04 134.49024 
+Q 559.62 134.49024 559.62 131.3856 
+L 559.62 32.03712 
+Q 559.62 28.93248 554.04 28.93248 
+L 397.8 28.93248 
+Q 392.22 28.93248 392.22 32.03712 
+L 392.22 131.3856 
+Q 392.22 134.49024 397.8 134.49024 
+z
+" clip-path="url(#peaaabc8dbe)" style="fill: #eaf2f8; stroke: #27465b; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 176.598501 81.71136 
+Q 191.33816 81.71136 204.736179 81.71136 
+" clip-path="url(#peaaabc8dbe)" style="fill: none; stroke: #27465b; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 199.536179 79.11136 
+L 204.736179 81.71136 
+L 199.536179 84.31136 
+z
+" clip-path="url(#peaaabc8dbe)" style="fill: #27465b; stroke: #27465b; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 366.318501 81.71136 
+Q 381.05816 81.71136 394.456179 81.71136 
+" clip-path="url(#peaaabc8dbe)" style="fill: none; stroke: #27465b; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 389.256179 79.11136 
+L 394.456179 81.71136 
+L 389.256179 84.31136 
+z
+" clip-path="url(#peaaabc8dbe)" style="fill: #27465b; stroke: #27465b; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 18.36 295.93152 
+L 174.6 295.93152 
+Q 180.18 295.93152 180.18 292.82688 
+L 180.18 193.4784 
+Q 180.18 190.37376 174.6 190.37376 
+L 18.36 190.37376 
+Q 12.78 190.37376 12.78 193.4784 
+L 12.78 292.82688 
+Q 12.78 295.93152 18.36 295.93152 
+z
+" clip-path="url(#peaaabc8dbe)" style="fill: #f0f4ec; stroke: #27465b; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 208.08 295.93152 
+L 364.32 295.93152 
+Q 369.9 295.93152 369.9 292.82688 
+L 369.9 193.4784 
+Q 369.9 190.37376 364.32 190.37376 
+L 208.08 190.37376 
+Q 202.5 190.37376 202.5 193.4784 
+L 202.5 292.82688 
+Q 202.5 295.93152 208.08 295.93152 
+z
+" clip-path="url(#peaaabc8dbe)" style="fill: #f0f4ec; stroke: #27465b; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 397.8 295.93152 
+L 554.04 295.93152 
+Q 559.62 295.93152 559.62 292.82688 
+L 559.62 193.4784 
+Q 559.62 190.37376 554.04 190.37376 
+L 397.8 190.37376 
+Q 392.22 190.37376 392.22 193.4784 
+L 392.22 292.82688 
+Q 392.22 295.93152 397.8 295.93152 
+z
+" clip-path="url(#peaaabc8dbe)" style="fill: #f0f4ec; stroke: #27465b; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 96.48 133.382848 
+Q 96.48 162.43111 96.48 190.137731 
+" clip-path="url(#peaaabc8dbe)" style="fill: none; stroke: #27465b; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 99.08 184.937731 
+L 96.48 190.137731 
+L 93.88 184.937731 
+z
+" clip-path="url(#peaaabc8dbe)" style="fill: #27465b; stroke: #27465b; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 286.2 133.382848 
+Q 286.2 162.43111 286.2 190.137731 
+" clip-path="url(#peaaabc8dbe)" style="fill: none; stroke: #27465b; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 288.8 184.937731 
+L 286.2 190.137731 
+L 283.6 184.937731 
+z
+" clip-path="url(#peaaabc8dbe)" style="fill: #27465b; stroke: #27465b; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 475.92 133.382848 
+Q 475.92 162.43111 475.92 190.137731 
+" clip-path="url(#peaaabc8dbe)" style="fill: none; stroke: #27465b; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 478.52 184.937731 
+L 475.92 190.137731 
+L 473.32 184.937731 
+z
+" clip-path="url(#peaaabc8dbe)" style="fill: #27465b; stroke: #27465b; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="96.48" y="58.465052" transform="rotate(-0 96.48 58.465052)">Propagation and geometry</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(40.909258 85.516389)">LOS / ground / wall / NLOS</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(25.722148 96.972131)">Wavelength and baseline vectors</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(47.242422 108.427873)">Relative complex fields</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="286.2" y="58.502161" transform="rotate(-0 286.2 58.502161)">Measurement formation</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(230.44332 85.516389)">Antenna voltage response</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(220.307734 96.972131)">Channel-specific level and bias</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(218.498828 108.427873)">Correlated noise → quantization</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="475.92" y="58.502161" transform="rotate(-0 475.92 58.502161)">Observable differences</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(422.952383 85.516389)">Spatial or L1–L5 samples</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(411.063008 96.972131)">Calibration before differencing</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(421.150781 108.427873)">Shared reference channel</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="96.48" y="219.906332" transform="rotate(-0 96.48 219.906332)">E1–E2: physical checks</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(27.063555 246.957669)">Phase convention and null cases</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(29.617539 258.413411)">Baseline orientation and length</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(31.3275 269.869153)">Exact vs weak-signal response</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="286.2" y="219.943441" transform="rotate(-0 286.2 219.943441)">E3 and E5: empirical tests</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(211.907344 246.957669)">Paired train/test scenes; five seeds</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(223.081523 258.413411)">Equal-channel layout controls</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(216.17793 269.869153)">Bias, calibration and scene shifts</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="475.92" y="219.906332" transform="rotate(-0 475.92 219.906332)">E4: binary detection limit</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(403.631484 246.957669)">Phase-marginalized discrete PMFs</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(426.697695 258.413411)">Equal-prior Bayes error</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(411.824687 269.869153)">Explicit nuisance assumptions</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="peaaabc8dbe">
+   <rect x="7.2" y="7.2" width="558" height="310.464"/>
+  </clipPath>
+ </defs>
+</svg>

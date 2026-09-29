@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cn0sampling"
+version = "1.0.0"
+description = "GNSS multipath-class detectability from spatial and inter-frequency C/N0 differences under receiver quantization and noise"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Habib Hamam"}]
+dependencies = ["numpy>=1.26", "scipy>=1.11", "scikit-learn>=1.3", "matplotlib>=3.8"]
+
+[project.optional-dependencies]
+notebook = ["jupyter", "nbformat", "nbclient", "ipykernel"]
+test = ["pytest>=7"]
+
+[project.scripts]
+cn0-run-experiments = "cn0sampling.run_experiments:main"
+cn0-make-diagrams = "cn0sampling.make_diagrams:main"
+
+[tool.setuptools]
+packages = ["cn0sampling"]

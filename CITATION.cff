@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below and cite the companion article once published."
+type: software
+title: "cn0sampling: GNSS multipath-class detectability from spatial and inter-frequency C/N0 differences under receiver quantization and noise"
+version: 1.0.0
+date-released: 2026-09-29
+license: MIT
+repository-code: "https://github.com/hamamh66/cn0-interference-sampling"
+authors:
+  - family-names: Hamam
+    given-names: Habib
+    affiliation: "Faculty of Engineering, Université de Moncton, Canada; School of Electrical Engineering, University of Johannesburg, South Africa"
+keywords:
+  - GNSS
+  - multipath
+  - NLOS
+  - carrier-to-noise-density ratio
+  - dual-antenna
+  - receiver quantization
+  - reproducible simulation
+preferred-citation:
+  type: article
+  title: "Sampling One Interference Pattern Twice: Detectability of GNSS Multipath Classes from Spatial and Inter-Frequency C/N0 Differences under Receiver Quantization and Noise"
+  authors:
+    - family-names: Hamam
+      given-names: Habib
+  journal: "Under review"
+  year: 2026

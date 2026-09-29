@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# project outputs
+cn0_outputs/
+notebooks/cn0_outputs/
