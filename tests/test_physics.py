@@ -37,3 +37,18 @@ def test_full_results_match_archived(tmp_path):
             assert abs(R['E3'][name][tag]['mean'] - ref['E3'][name][tag]['mean']) < 1e-9
     for a, b in zip(R['E4'], ref['E4']):
         assert abs(a['bayes_error'] - b['bayes_error']) < 1e-9
+
+def test_generalized_likelihood_reduces_to_single_amplitude():
+    a = sim.bayes_error(0.05, np.pi, 0.5, 0.25)
+    b = sim.bayes_error_general([0.05], [1.0], np.pi, 0.5, 0.25)
+    assert abs(a - b) < 1e-12
+
+def test_approximation_matches_exact_for_fine_reporting():
+    assert abs(sim.bayes_error(0.1, np.pi, 0.5, 0.25) - sim.bayes_error_additive_approx(0.1, np.pi, 0.5, 0.25)) < 0.003
+
+def test_nuisance_marginalization_never_lowers_error():
+    agrid = np.linspace(0.02, 0.2, 10)
+    e_known = sim.bayes_error(float(agrid.mean()), np.pi, 0.25, 0.25)
+    e_marg = sim.bayes_error_general(agrid, np.ones(10), np.pi, 0.25, 0.25)
+    e_off = sim.bayes_error_general(agrid, np.ones(10), np.pi, 0.25, 0.25, offsets=np.linspace(-1, 1, 9))
+    assert e_known < e_marg < e_off < 0.5

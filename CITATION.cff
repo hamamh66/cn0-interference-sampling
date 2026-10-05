@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
 title: "cn0sampling: GNSS multipath-class detectability from spatial and inter-frequency C/N0 differences under receiver quantization and noise"
-version: 1.0.0
-date-released: 2026-09-29
+version: 1.1.0
+date-released: 2026-10-05
 license: MIT
 repository-code: "https://github.com/hamamh66/cn0-interference-sampling"
 authors:

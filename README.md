@@ -35,7 +35,7 @@ versions used to produce the archived results.
 
 ```bash
 pytest -q                          # physical self-checks + reproduction of results/results.json (~30 s)
-cn0-run-experiments --out results  # experiments E1–E5, ~15 s on a laptop CPU
+cn0-run-experiments --out results  # experiments E1–E7, ~20 s on a laptop CPU
 cn0-make-diagrams                  # framework and operation schematics
 ```
 
@@ -57,7 +57,7 @@ pe = sim.bayes_error(alpha=0.05, dphi=3.14159, sigma=0.5, q=0.25)      # quantiz
 | Path | Content |
 |---|---|
 | `cn0sampling/simulation.py` | Propagation, antenna-channel and receiver models; analytic phase step and weak-signal RMS; quantized binary Bayes error; `self_checks()` |
-| `cn0sampling/run_experiments.py` | Experiments E1–E5, paired seeds, LaTeX table generation (`cn0-run-experiments`) |
+| `cn0sampling/run_experiments.py` | Experiments E1–E7, paired seeds, LaTeX table generation (`cn0-run-experiments`) |
 | `cn0sampling/make_diagrams.py` | Schematics (`cn0-make-diagrams`) |
 | `notebooks/cn0_difference_detectability.ipynb` | Executed notebook: self-checks, full run, figures, tables and interpretation |
 | `results/results.json` | Archived results with per-seed metrics, validation checks, software versions and source hashes |
@@ -77,7 +77,9 @@ pe = sim.bayes_error(alpha=0.05, dphi=3.14159, sigma=0.5, q=0.25)      # quantiz
   decision-tree classification under six (σ, q) settings, five seeds, paired across nine feature configurations
   (single channel, horizontal / vertical / oblique pairs, H+V and H+H triplets, L1–L5); E4 phase-marginalized
   quantized binary Bayes error; E5 frozen-model stress tests (differential bias, open-sky calibration, correlated
-  noise, scene shift).
+  noise, scene shift); E6 exact bin likelihood versus the additive-quantization-noise approximation across reporting
+  step, noise and quantizer origin; E7 Bayes error with unknown reflection amplitude and differential channel offset
+  marginalized under explicit priors.
 
 Results are deterministic for fixed seeds. Other library versions may change values at the last reported decimal.
 

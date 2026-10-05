@@ -108,3 +108,42 @@ def self_checks():
     obs=measure(np.zeros((100000,2)),22,.5,0,rho=.8)
     assert abs(np.var(obs[:,1]-obs[:,0])-.1)<.003
     print('Passed: geometry, phase convention, blind cases, paired identity, RMS approximation, PMF normalization, binary null.')
+
+# ---------------------------------------------------------------- E6/E7 extensions (v1.1.0)
+def difference_pmf_general(alphas,alpha_w,dphi,sigma,q,mu=40.125,offsets=(0.,),offset_w=None,nphase=512):
+    """Phase-marginalized PMF of Q(Y1+delta)-Q(Y0) with the alternative additionally marginalized over a
+    discrete prior on the reflection amplitude (alphas, alpha_w) and on a differential channel offset delta
+    (offsets, offset_w). The null (alpha = 0) is marginalized over the same offset prior. Returns (z, p0, p1)."""
+    alphas=np.atleast_1d(alphas).astype(float);alpha_w=np.atleast_1d(alpha_w).astype(float);alpha_w=alpha_w/alpha_w.sum()
+    offsets=np.atleast_1d(offsets).astype(float)
+    offset_w=np.ones(len(offsets))/len(offsets) if offset_w is None else np.asarray(offset_w,float)/np.sum(offset_w)
+    ph=(np.arange(nphase)+.5)*2*np.pi/nphase
+    amax=alphas.max()
+    span=10*np.log10(1+amax**2+2*amax)-10*np.log10(1+amax**2-2*amax) if amax>0 else 0.
+    low=mu-span-abs(offsets).max()-9*sigma-q;high=mu+span+abs(offsets).max()+9*sigma+q
+    m=np.arange(np.floor(low/q),np.ceil(high/q)+1)
+    def bins(v):return ndtr(((m+.5)*q-v[:,None])/sigma)-ndtr(((m-.5)*q-v[:,None])/sigma)
+    diag_offsets=np.arange(-len(m)+1,len(m))
+    def pmf_of(joint):return np.array([np.diagonal(joint,offset=i).sum() for i in diag_offsets])
+    h1=np.zeros(len(diag_offsets));h0=np.zeros(len(diag_offsets))
+    for d,wd in zip(offsets,offset_w):
+        z0=bins(np.array([mu]))[0];z1=bins(np.array([mu+d]))[0];h0+=wd*pmf_of(np.outer(z0,z1))
+        for a,wa in zip(alphas,alpha_w):
+            lvl0=mu+10*np.log10(1+a**2+2*a*np.cos(ph));lvl1=mu+d+10*np.log10(1+a**2+2*a*np.cos(ph+dphi))
+            h1+=wd*wa*pmf_of(bins(lvl0).T@bins(lvl1)/nphase)
+    assert abs(h1.sum()-1)<1e-9 and abs(h0.sum()-1)<1e-9
+    return diag_offsets*q,h0,h1
+
+def bayes_error_general(alphas,alpha_w,dphi,sigma,q,**kw):
+    _,p0,p1=difference_pmf_general(alphas,alpha_w,dphi,sigma,q,**kw);return .5*np.minimum(p0,p1).sum()
+
+def bayes_error_additive_approx(alpha,dphi,sigma,q,nphase=512,grid=4001):
+    """Bayes error when rounding is replaced by independent zero-mean noise of variance q^2/6 per difference
+    (uniform-quantization approximation); the difference is then continuous with Gaussian noise of variance
+    2 sigma^2 + q^2/6 around the exact two-ray difference signal. Evaluated on a fine grid."""
+    ph=(np.arange(nphase)+.5)*2*np.pi/nphase
+    s=10*np.log10(1+alpha**2+2*alpha*np.cos(ph+dphi))-10*np.log10(1+alpha**2+2*alpha*np.cos(ph))
+    v=np.sqrt(2*sigma**2+q*q/6);lim=np.abs(s).max()+8*v
+    x=np.linspace(-lim,lim,grid);dx=x[1]-x[0]
+    f1=np.exp(-(x[None,:]-s[:,None])**2/(2*v*v)).mean(0)/(v*np.sqrt(2*np.pi));f0=np.exp(-x**2/(2*v*v))/(v*np.sqrt(2*np.pi))
+    return .5*np.minimum(f0,f1).sum()*dx

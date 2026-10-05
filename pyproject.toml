@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cn0sampling"
-version = "1.0.0"
+version = "1.1.0"
 description = "Simulated GNSS C/N0 for LOS/multipath/NLOS reception and detectability of inter-antenna and inter-frequency C/N0 differences under receiver noise and quantization"
 readme = "README.md"
 requires-python = ">=3.10"

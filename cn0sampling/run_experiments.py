@@ -104,6 +104,33 @@ def run_all(n=12000,seeds=(0,1,2,3,4),output_dir=None):
     # Weak-signal design tensor and equal-length geometric conditioning.
     nrm=np.eye(3);layouts={'horizontal_pair':np.array([[.5,0,0]]),'oblique_pair':np.array([[.5,0,.1]]),'horizontal_vertical':np.array([[.5,0,0],[0,0,.1]]),'three_axes':np.eye(3)*.1}
     R['design_rank']={k:int(np.linalg.matrix_rank(v)) for k,v in layouts.items()}
+    # ---------------- E6: exact bin likelihood vs additive-noise approximation; quantizer-origin sweep
+    R['E6']=[]
+    for sigma in [.25,.5,1.]:
+        for q in [.25,.5,1.,2.]:
+            for alpha in [.05,.1,.2]:
+                mus=40.+q*np.linspace(0,1,9,endpoint=False)          # level position within one reporting bin
+                ex=[float(bayes_error(alpha,np.pi,sigma,q,mu=m)) for m in mus]
+                R['E6'].append(dict(sigma=sigma,q=q,alpha=alpha,exact_mean=float(np.mean(ex)),exact_min=float(min(ex)),exact_max=float(max(ex)),
+                                    approx=float(bayes_error_additive_approx(alpha,np.pi,sigma,q))))
+    fig,axs=plt.subplots(1,3,figsize=(9,2.8),sharey=True)
+    for ax,sigma in zip(axs,[.25,.5,1.]):
+        for alpha,c in zip([.05,.1,.2],['C0','C1','C2']):
+            rows=[r for r in R['E6'] if r['sigma']==sigma and r['alpha']==alpha];qs=[r['q'] for r in rows]
+            ax.fill_between(qs,[r['exact_min'] for r in rows],[r['exact_max'] for r in rows],color=c,alpha=.2)
+            ax.plot(qs,[r['exact_mean'] for r in rows],'-o',color=c,ms=3,label=fr'$\alpha$={alpha} exact')
+            ax.plot(qs,[r['approx'] for r in rows],'--',color=c,label=fr'$\alpha$={alpha} approx.')
+        ax.set(xscale='log',xlabel='reporting step q (dB)',title=fr'$\sigma$={sigma} dB',xticks=[.25,.5,1,2],xticklabels=['0.25','0.5','1','2']);ax.minorticks_off();ax.axhline(.5,color='gray',ls=':')
+    axs[0].set_ylabel('Equal-prior Bayes error');axs[2].legend(frameon=False,fontsize=6,loc='lower right');savefig(fig,'fig_quant_approx')
+    # ---------------- E7: unknown reflection amplitude and differential offset (marginalized likelihood)
+    agrid=np.linspace(.02,.2,10);R['E7']=[]
+    for sigma,q in [(.5,.25),(.5,1.),(.25,.25)]:
+        base=float(bayes_error(float(agrid.mean()),np.pi,sigma,q))
+        marg=float(bayes_error_general(agrid,np.ones(10),np.pi,sigma,q))
+        row=dict(sigma=sigma,q=q,known_alpha_mean=base,alpha_marginalized=marg)
+        for W in [.25,.5,1.]:
+            offs=np.linspace(-W,W,9);row[f'offset_pm{W}']=float(bayes_error_general(agrid,np.ones(10),np.pi,sigma,q,offsets=offs))
+        R['E7'].append(row)
     R['runtime_s']=time.time()-start
     R['source_sha256']={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [HERE/'simulation.py',HERE/'run_experiments.py']}
     (OUT/'results.json').write_text(json.dumps(R,indent=2));make_tables(R)
@@ -130,6 +157,15 @@ def make_tables(R):
         vals=[' / '.join(f'{100*r:.0f}' for r in R['E3'][name][tag]['recall']) for tag in ['0/0','0/0.25','0.5/0.25']]
         lines.append(name.replace('+',r'$+$')+' & '+' & '.join(vals)+r' \\')
     lines += [r'\bottomrule',r'\end{tabular}'];(TAB/'table_recall.tex').write_text('\n'.join(lines))
+    lines=[r'\begin{tabular}{rrrrrr}',r'\toprule',r'$\sigma$ (dB) & $q$ (dB) & $\alpha$ & Exact, mean [min, max] over origin & Additive approx. & Approx.\,$-$\,exact \\',r'\midrule']
+    for r in R['E6']:
+        if r['alpha']!=.1:continue
+        lines.append(f"{r['sigma']} & {r['q']} & {r['alpha']} & {r['exact_mean']:.3f} [{r['exact_min']:.3f}, {r['exact_max']:.3f}] & {r['approx']:.3f} & {r['approx']-r['exact_mean']:+.3f} \\\\")
+    lines+=[r'\bottomrule',r'\end{tabular}'];(TAB/'table_e6.tex').write_text('\n'.join(lines))
+    lines=[r'\begin{tabular}{rrrrrrr}',r'\toprule',r'$\sigma$ (dB) & $q$ (dB) & Known $\bar\alpha$ & $\alpha$ marginalized & Offset $\pm0.25$ & Offset $\pm0.5$ & Offset $\pm1.0$ \\',r'\midrule']
+    for r in R['E7']:
+        lines.append(f"{r['sigma']} & {r['q']} & {r['known_alpha_mean']:.3f} & {r['alpha_marginalized']:.3f} & {r['offset_pm0.25']:.3f} & {r['offset_pm0.5']:.3f} & {r['offset_pm1.0']:.3f} \\\\")
+    lines+=[r'\bottomrule',r'\end{tabular}'];(TAB/'table_e7.tex').write_text('\n'.join(lines))
 
 def main(argv=None):
     import argparse
